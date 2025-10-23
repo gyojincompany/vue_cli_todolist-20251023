@@ -32,3 +32,32 @@ export default {
   },
 };
 </script>
+
+<style>
+.todo-input {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.todo-input input {
+  padding: 10px;
+  border: 1px solid rgb(116, 114, 114);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.todo-input button {
+  padding: 8px 16px;
+  background-color: coral;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.todo-input button:hover {
+  background-color: rgb(221, 60, 2);
+}
+</style>

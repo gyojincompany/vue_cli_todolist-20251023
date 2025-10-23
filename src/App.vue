@@ -39,11 +39,16 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  max-width: 400px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 50px auto;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background-color: #faf9f9;
+  padding: 10px;
+}
+
+#app h1 {
+  color: cadetblue;
 }
 </style>
