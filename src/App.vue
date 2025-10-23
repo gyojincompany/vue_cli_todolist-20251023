@@ -9,6 +9,7 @@
 <script>
 import TodoInput from "./components/TodoInput.vue";
 import TodoList from "./components/TodoList.vue";
+import api from "./config/axiosConfig";
 
 export default {
   name: "App",
@@ -21,7 +22,20 @@ export default {
       todos: [],
     };
   },
+  async created() {
+    //페이지 로딩시에 자동으로 호출
+    await this.loadTodos(); //페이지 로딩 될때 새로운 백엔드 할일 불러오기
+  },
   methods: {
+    async loadTodos() {
+      //기존의 할일 리스트 가져오기
+      try {
+        const res = await api.get("/todos"); //백엔드에 모든 할일리스트 가져오기 호출
+        this.todos = res.data;
+      } catch (err) {
+        console.error("할일 리스트 불러오기 실패", err);
+      }
+    },
     addTodo(newTodoText) {
       this.todos.push({
         id: Date.now(), //현재 시간(밀리터리 초 단위)->절대 중복되지 않는 값
